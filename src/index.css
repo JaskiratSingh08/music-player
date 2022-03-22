@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+body {
+    background-color: #DDD;
+}
+
+.border-class{
+    margin: 20px;
+
+}
+
+.App {
+    border: 1px;
+    border-radius: 10px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: #70e1f5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.c-player > h4 {
+    color: black;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+}
+
+.c-player > p {
+    color: black;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.c-player--details .details-img{
+    position: relative;
+    width: center;
+    margin: 50px auto;
+}
+
+.c-player--details .details-img img{
+    display: block;
+    margin: 0px auto;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 1%;
+}
+
+.c-player--details .details-title {
+    color: black;
+    font-size: 28px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8), -2px -2px 4px rgba(255,255,255,0.4);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.c-player--details .details-artist {
+    color: black;
+    font-size: 19px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8), -2px -2px 4px rgba(255,255,255,0.4);
+    text-align: center;
+    margin-bottom: 12px;
+
+}
+
+
+.c-player--controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+
+}
+
+.c-player--controls .play-btn {
+    display: flex;
+    margin: 0 30px;
+    padding: 20px;
+    border-radius: 50%;
+    box-shadow:
+        4px 4px 10px rgba(0,0,0,0.8), 
+        -4px -4px 10px rgba(255, 255, 255, 0.4),
+        inset -4px -4px 10px rgba(0,0,0,0.4),
+        inset 4px 4px 10px rgba(255, 255, 255, 0.4);
+    border: none;
+    outline: none;
+    background-color: #CCCCFF;
+    color: black;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.c-player--controls .skip-btn{
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: black;
+    font-size: 18px;
+}
+
+
