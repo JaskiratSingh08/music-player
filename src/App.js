@@ -43,6 +43,12 @@ function App() {
       artist: "Prem Dhillon",
       img_src: "./images/song-6.jpg",
       src: "./music/Shah-Ji.mp3"
+    },
+    {
+      title: "Remember This",
+      artist: "NF",
+      img_src: "./images/perception.jpg",
+      src: "./music/NF-Remember-This.mp3"
     }
   ]);
 
