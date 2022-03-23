@@ -42,7 +42,7 @@ function App() {
       title: "Shah Ji",
       artist: "Prem Dhillon",
       img_src: "./images/song-6.jpg",
-      src: "./music/Shah-Ji.mp3"
+      src: "./music/Shah-ji.mp3"
     }
   ]);
 
