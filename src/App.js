@@ -49,6 +49,12 @@ function App() {
       artist: "NF",
       img_src: "./images/perception.jpg",
       src: "./music/NF-Remember-This.mp3"
+    },
+    {
+      title: "You're not God",
+      artist: "Anna Calvi",
+      img_src: "./images/song-2.jpg",
+      src: "./music/You-are-not-god.mp3"
     }
   ]);
 
