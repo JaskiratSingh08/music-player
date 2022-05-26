@@ -15,7 +15,7 @@ body {
 }
 
 .App {
-    border: 1px;
+    border: 5.5px solid ;
     border-radius: 10px;
     outline: none;
     display: flex;
@@ -24,11 +24,66 @@ body {
     min-height: 100vh;
     padding-top: 50px;
     padding-bottom: 50px;
-    background: #70e1f5;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background-color: #DCDCDC;  /* fallback for old browsers */
+    border-image:
+    linear-gradient(
+              #ff512f,
+              #dd2476,
+              #1c64ff) 1;
+    animation: rotate
+    2.5s
+    ease-in
+    Infinite;}
+    @keyframes rotate {
+        50%{
+            border-image:
+            linear-gradient(
+                 360deg,
+                    #ff512f,
+                    #dd2476,
+                    #1c64ff) 1;
+            }
 }
+
+
+    @media screen and (max-width:  780px) {
+        /*.prgrss-btns {
+            -webkit-transform:scale(0.3);
+            -moz-transform:scale(0.3);
+            -ms-transform:scale(0.3);
+            transform:scale(0.3);
+        }
+
+        .details-img{
+            -webkit-transform:scale(0.3);
+            -moz-transform:scale(0.3);
+            -ms-transform:scale(0.3);
+            transform:scale(0.3);
+        }*/
+
+        .c-player{
+            -webkit-transform:scale(0.5);
+            -moz-transform:scale(0.5);
+            -ms-transform:scale(0.5);
+            transform:scale(0.5);
+        }
+
+    }
+
+    @media screen and (max-width:  395px) {
+
+        .c-player{
+
+            -webkit-transform:scale(0.25);
+            -moz-transform:scale(0.25);
+            -ms-transform:scale(0.25);
+            transform:scale(0.25);
+        }
+
+    }
+
+
+
 
 .c-player > h4 {
     color: black;
@@ -56,7 +111,7 @@ body {
     margin: 0px auto;
     width: 100%;
     max-width: 400px;
-    border-radius: 1%;
+    border-radius: 0 10% 0 10%;
 }
 
 .c-player--details .details-title {
