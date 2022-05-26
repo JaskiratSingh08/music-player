@@ -4,7 +4,7 @@ import Details from './Details';
 import Style from './Style.css';
 import {BsFillArrowRightCircleFill} from "react-icons/bs";
 import {BsFillArrowLeftCircleFill} from "react-icons/bs";
-
+import index from '../index.css';
 
 function Player(props) {
 
@@ -136,7 +136,7 @@ function Player(props) {
 
                     {/*Progress bar */}
 
-                    <div> 
+                    <div className="p-bar"> 
                         <input className="progress-bar"  type="range" defaultvalue="0" ref={progressBar} onChange={changeRange} ></input> 
                     </div>
 
