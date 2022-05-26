@@ -1,4 +1,5 @@
 import React from 'react'
+import index from '../index.css'
 
 function Details(props) {
     return (
