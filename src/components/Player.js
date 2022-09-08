@@ -1,10 +1,9 @@
-import React, {useState, useRef, useEffect} from 'react'
+import React, {useState, useRef, useEffect, useContext} from 'react'
 import Controls from './Controls';
 import Details from './Details';
-import Style from './Style.css';
-import {BsFillArrowRightCircleFill} from "react-icons/bs";
-import {BsFillArrowLeftCircleFill} from "react-icons/bs";
-import index from '../index.css';
+import './Style.css';
+import '../index.css';
+import {MusicContext, MusicProvider} from './../context/Musiccontext';
 
 function Player(props) {
 
@@ -15,6 +14,8 @@ function Player(props) {
     /* from app.js*/
 
 
+    const {music,setMusic} = useContext(MusicContext);
+    // console.log(music);
     const audioEl = useRef(null);
 
     const progressBar = useRef();
@@ -40,31 +41,34 @@ function Player(props) {
     });
 
     
-    const SkipSong = (forwards = true) => {
-        if (forwards) {
-            props.setCurrentSongIndex(() => {
-                let temp = props.currentSongIndex;
-                temp++;
 
-                if (temp > props.songs.length - 1) {
-                    temp = 0;
-                }
+    // const SkipSong = (forwards = true) => {
+    //     if (forwards) {
+    //         props.setCurrentSongIndex(() => {
+    //             let temp = music;
+    //             temp++;
 
-                return temp;
-            });
-        } else {
-            props.setCurrentSongIndex(() => {
-                let temp = props.currentSongIndex;
-                temp--;
+    //             if (temp > props.songs.length - 1) {
+    //                 temp = 0;
+    //             }
 
-                if (temp < 0) {
-                    temp = props.songs.length - 1;
-                }
+    //             // return temp;
+    //             setMusic(temp);
+    //         });
+    //     } else {
+    //         props.setCurrentSongIndex(() => {
+    //             let temp = music;
+    //             temp--;
 
-                return temp;
-            });
-        }
-    }
+    //             if (temp < 0) {
+    //                 temp = props.songs.length - 1;
+    //             }
+
+    //             // return temp;
+    //             setMusic(temp);
+    //         });
+    //     }
+    // }
 
 
     useEffect(() => {
@@ -107,32 +111,27 @@ function Player(props) {
     }
 
 
-    const backTen = () => {
-        progressBar.current.value = Number(progressBar.current.value - 10);
-        changeRange();
-    } 
-
-    const forwardTen = () => {
-        progressBar.current.value = Math.floor(Number(progressBar.current.value + 10));
-        changeRange();
-    } 
+    
  
     
 
     return (
+        <div className="Player">
+
         <div className="c-player">
             
-            <audio  src={props.songs[props.currentSongIndex].src} step='0.05'  ref={audioEl}  ></audio>
+            <audio  src={props.songs[music].src} step='0.05'  ref={audioEl}  ></audio>
             <h4 className='w-100 text-center mt-3'>Playing now</h4>
-            <Details song={props.songs[props.currentSongIndex]} />
+            <Details song={props.songs[music]} />
 
             <div className= "prgrss-btns">
         
-                <button className="forwardbackward" onClick={backTen}> <BsFillArrowLeftCircleFill className="backten" /> 10 </button>
 
                 {/*Current Time */}
 
-                <div className="duration">{calculateTime (currentTime)} </div>
+                    <div className="duration">
+                        {calculateTime(currentTime)} 
+                    </div>
 
                     {/*Progress bar */}
 
@@ -145,14 +144,15 @@ function Player(props) {
                     {(duration && !isNaN(duration)) && calculateTime (duration)} 
                 </div>
 
-                <button className="forwardbackward" onClick={forwardTen}>  10   <BsFillArrowRightCircleFill className='aheadten' /> </button>
 
-        </div>
+            </div>
 
 
-            <Controls isPlaying={isPlaying} setIsPlaying={setIsPlaying} SkipSong={SkipSong} />
+            <Controls isPlaying={isPlaying} setIsPlaying={setIsPlaying} progressBar={progressBar} changeRange={changeRange} />
             
             <p>Next up: <span>{props.songs[props.nextSongIndex].title} by {props.songs[props.nextSongIndex].artist}</span></p>
+        </div>
+
         </div>
     )
 }

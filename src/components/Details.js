@@ -1,14 +1,17 @@
-import React from 'react'
-import index from '../index.css'
+import React, { useContext } from 'react'
+import { MusicContext } from '../context/Musiccontext';
+import '../index.css'
 
-function Details(props) {
+function Details() {
+
+    const {music, songs} = useContext(MusicContext);
     return (
         <div className="c-player--details">
             <div className="details-img">
-                <img src={props.song.img_src} alt="" />
+                <img src={songs[music].img_src} alt={songs[music].title} />
             </div>
-            <h3 className="details-title">{props.song.title}</h3>
-            <h4 className="details-artist">{props.song.artist}</h4>
+            <h3 className="details-title">{songs[music].title}</h3>
+            <h4 className="details-artist">{songs[music].artist}</h4>
         </div>
     )
 }

@@ -1,31 +1,29 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin: auto;
+    padding: auto;
     box-sizing: border-box;
     font-family: 'Fira Sans', sans-serif;
 }
 
 body {
-    background-color: #DDD;
+    background-color: "";
 }
 
 .border-class{
-    margin: 40px;
+    /* margin: 40px; */
 
 }
 
 .App {
-    border: 5.5px solid ;
-    border-radius: 10px;
+    /* border: 5.5px solid ;
+    border-radius: 10px; */
     outline: none;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    background-color: #DCDCDC;  /* fallback for old browsers */
-    border-image:
+    /* background-color: gray;  hsla(0,0%,100%,.35)   fallback for old browsers */
+    /* border-image:
     linear-gradient(
               #ff512f,
               #dd2476,
@@ -42,11 +40,25 @@ body {
                     #ff512f,
                     #dd2476,
                     #1c64ff) 1;
-            }
+            } */
+}
+
+.Player{
+    text-align: center;
+    width: 78%;
+    height: 100%;
+    background-color:crimson ;
+    overflow: hidden;
+    position: relative;
+    left: calc(100% - 89%);
+}
+
+.c-player{
+    width: 100%;
 }
 
 
-    @media screen and (max-width:  780px) {
+    @media screen and (max-width:  760px) {
         /*.prgrss-btns {
             -webkit-transform:scale(0.3);
             -moz-transform:scale(0.3);
@@ -62,15 +74,15 @@ body {
         }*/
 
         .c-player{
-            -webkit-transform:scale(0.5);
+            /* -webkit-transform:scale(0.5);
             -moz-transform:scale(0.5);
             -ms-transform:scale(0.5);
-            transform:scale(0.5);
+            transform:scale(0.5); */
         }
 
     }
 
-    @media screen and (max-width:  395px) {
+    @media screen and (max-width: 395px) {
 
         .c-player{
 
@@ -95,7 +107,7 @@ body {
 
 .c-player > p {
     color: black;
-    font-size: 14px;
+    font-size: 9pt;
     text-align: center;
     font-weight: 500;
 }
@@ -108,15 +120,16 @@ body {
 
 .c-player--details .details-img img{
     display: block;
-    margin: 0px auto;
+    margin: auto;
     width: 100%;
-    max-width: 400px;
+    height: 300px;
+    max-width: fit-content;
     border-radius: 0 10% 0 10%;
 }
 
 .c-player--details .details-title {
     color: black;
-    font-size: 28px;
+    font-size: 18pt;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.8), -2px -2px 4px rgba(255,255,255,0.4);
     text-align: center;
     margin-bottom: 10px;
